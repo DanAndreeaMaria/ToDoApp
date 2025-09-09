@@ -1,0 +1,63 @@
+/* Minimal fix for the footer, to stay at the bottom and not float in the middle of the page */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.navbar-light {
+  background-color: #e7fafe !important;
+}
+
+.checkbox-cursor {
+  cursor: pointer;
+}
+
+.btn-outline-info:hover {
+  color: #fff !important;
+}
+
+.bi-arrow-right {
+  margin-left: 8px;
+  transform: scale(1.2);
+}
+
+/* Colors for input tasks and buttons */
+.bg-pastel-success {
+  color: #404040;
+  background: #a7e399;
+  border-color: #a7e399;
+}
+
+.btn-pastel-success {
+  color: #404040;
+}
+
+.bg-pastel-warning {
+  color: #3f3f3f;
+  background-color: #fff9af;
+  border-color: #fff9af;
+}
+
+.btn-pastel-warning {
+  color: #3f3f3f;
+}
+
+/* Animation for deleted tasks */
+.fade-out {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  transition: opacity 0.5ease, background-color 0.5s ease;
+  opacity: 0;
+}
