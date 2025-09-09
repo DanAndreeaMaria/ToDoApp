@@ -1,0 +1,81 @@
+{% extends "layout.html" %} {% block main %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style.css')}}"
+/>
+
+<form action="{{ url_for('add_task') }}" method="post">
+  <div class="input-group mb-3 mt-5">
+    <span class="input-group-text bg-info text-light"
+      >Enter a task
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-arrow-right"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+        /></svg
+    ></span>
+    <input
+      type="text"
+      class="form-control"
+      name="task"
+      placeholder="To do..."
+      aria-label="Task input"
+      required
+    />
+    <button class="btn btn-outline-primary" type="submit" id="button-addon2">
+      Add to list
+    </button>
+  </div>
+</form>
+
+<!-- Task list -->
+<ul class="list-group">
+  {% for task in tasks %}
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center {% if task['completed'] %}bg-pastel-success{% else %}bg-pastel-warning{% endif %}"
+  >
+    <!-- Toggle completed -->
+    <form
+      method="post"
+      action="{{ url_for('toggle_task', task_id=task['id']) }}"
+      class="me-2"
+    >
+      <input type="checkbox" class="checkbox-cursor"
+      onchange="this.form.submit()" {% if task['completed'] %}checked{% endif
+      %}>
+    </form>
+
+    <!-- Task text -->
+    <span
+      class="{% if task['completed'] %}text-decoration-line-through{% endif %}"
+      >{{ task['task'] }}</span
+    >
+
+    <!-- Right side - remove button -->
+    <form
+      method="post"
+      action="{{ url_for('delete_task', task_id=task['id']) }}"
+      class="m-0 p-0 delete-form"
+    >
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-danger ms-3 delete-btn {% if task['completed'] %}btn-pastel-warning {% else %}btn-pastel-success ms-3 {% endif %}"
+        data-id="{{ task['id'] }}"
+      >
+        ✕
+      </button>
+    </form>
+  </li>
+  {% else %}
+  <li class="list-group-item text-muted">No tasks yet!</li>
+  {% endfor %}
+</ul>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
