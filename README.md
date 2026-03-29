@@ -4,18 +4,18 @@ A simple full-stack web application for task management, built to practice skill
 Users can register and log in, add, edit and delete tasks, keeping their workflow organized with a clean, responsive interface.
 
 ## Features
-* Full-stack web application - integrates frontend and backend
-* CRUD functionality - Create, Read, Update, Delete tasks
-* Task management - organize and track tasks efficiently
-* Persistent storage - tasks saved using a SQLite database
-* Responsive design - workd across devices and screen sizes
-* Version control & deployment-ready - GitHub repo and Render for hosting
+* **Full-stack web application** - integrates frontend and backend
+* **CRUD functionality** - Create, Read, Update, Delete tasks
+* **Task management** - organize and track tasks efficiently
+* **Persistent storage** - tasks saved using a SQLite database
+* **Responsive design** - workd across devices and screen sizes
+* **Version control & deployment-ready** - GitHub repo and Render for hosting
 
 ## Technologies used
-* Frontend: HTML, CSS, JavaScript
-* Backend: Python (Flask)
-* Database: SQLite
-* Version Control & Hosting: GitHub, Render
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Python (Flask)
+* **Database:** SQLite
+* **Version Control & Hosting:** GitHub, Render
 
 ## Installation & Setup
   1. Clone the repository
