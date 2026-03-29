@@ -31,3 +31,6 @@ Users can register and log in, add, edit and delete tasks, keeping their workflo
 
   The app will be accessible at ```https://127.0.0.1:5000/```
 
+  **OR**
+  Live server on Render: ```https://todoapp-2q3d.onrender.com/login```
+
